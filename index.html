@@ -1,1 +1,52 @@
-<!-- Colocar código HTML aqui (e linkar js e css!) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja Secreta - Dota 2</title>
+  <link rel="stylesheet" href="assets/css/globals.css" />
+</head>
+<body>
+  <!-- Tela de Login -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <h2>🔮 Loja Secreta</h2>
+      <input type="text" id="username" placeholder="Seu nome de herói" />
+      <button onclick="login()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- Interface Principal -->
+  <div id="main-app" style="display: none;">
+    <header class="navbar">
+      <div class="logo">🔮 Loja Secreta</div>
+      <div id="user-display" class="user">Herói</div>
+      <div class="inventory" onclick="toggleInventory()">
+        🎒 <span id="inventory-count">0</span>
+      </div>
+    </header>
+
+    <div class="inventory-panel" id="inventory-panel">
+      <h3>Inventário</h3>
+      <ul id="inventory-items"></ul>
+      <p class="total">Total: <span id="inventory-total">0</span> moedas</p>
+      <button onclick="clearInventory()">Limpar</button>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Buscar item..." oninput="filterProducts()" />
+    </div>
+
+    <main class="products" id="products-container"></main>
+
+    <!-- Botões de simulação de API -->
+    <div class="api-buttons">
+      <button onclick="simularCompra()">Comprar Itens</button>
+      <button onclick="simularVenda()">Vender Itens</button>
+      <button onclick="logout()">Sair</button>
+    </div>
+  </div>
+
+  <script src="assets/js/index.js"></script>
+</body>
+</html>
