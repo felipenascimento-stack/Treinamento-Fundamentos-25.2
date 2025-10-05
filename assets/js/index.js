@@ -178,4 +178,4 @@ document.addEventListener('click', e => {
   if (panel && !e.target.closest('.inventory') && !e.target.closest('.inventory-panel')) {
     panel.style.display = 'none';
   }
-});// Código JS aqui!
+});
